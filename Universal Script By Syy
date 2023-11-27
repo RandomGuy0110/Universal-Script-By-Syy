@@ -1,0 +1,125 @@
+local player = game.Players.LocalPlayer
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Syy Saving Scripts", HidePremium = false,IntroEnabled = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+   
+  local Tab = Window:MakeTab({
+    Name = "Scripts",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+    local Section = Tab:AddSection({
+    Name = "Scripts"
+})
+
+    OrionLib:MakeNotification({
+    Name = "Syy Saving Scripts",
+    Content = "Welcome To My Saving Scripts!",
+    Image = "rbxassetid://4483345998",
+    Time = 0
+})
+
+Tab:AddButton({
+	Name = "Player Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/JustAP1ayer/PlayerHubOther/main/PlayerHubIngameUgcLimiteds.lua"))()
+  	end    
+})
+
+Tab:AddButton({
+    Name = "Rspy",
+    Callback = function()
+              loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RS/main/SimpleSpyMobile"))()
+      end    
+})
+
+Tab:AddButton({
+    Name = "Fly V3",
+    Callback = function()
+              loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+      end    
+})
+
+Tab:AddButton({
+    Name = "Delete Proximity Prompt Cooldown",
+    Callback = function()
+              while true do
+    for _, v in next, workspace:GetDescendants() do
+        if v:IsA("ProximityPrompt") then
+            v.HoldDuration = 0
+        end
+    end
+    wait(1)  -- Adjust the delay between loops as needed
+      end
+      end    
+})
+
+Tab:AddButton({
+    Name = "Hide Players",
+    Callback = function()
+              _G.HideAll = true
+while _G.HideAll and  task.wait() do
+
+for i,v in pairs(game.Players:GetPlayers()) do
+if v.Name ~= game.Players.LocalPlayer.Name and v.Character then
+v.Character:Destroy()
+end
+end
+      end
+      end    
+})
+
+Tab:AddButton({
+    Name = "Infinite Yield",
+    Callback = function()
+              loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+      end    
+})
+
+Tab:AddButton({
+	Name = "Adonis",
+	Callback = function()
+      		-- add to autoexec, makes your screen get a red tint whenever adonis is in a game
+local function tintScreenRedWithTransparency()
+    local ScreenGui = Instance.new("ScreenGui")
+    local Frame = Instance.new("Frame")
+    
+    ScreenGui.Name = "RedTint"
+    Frame.Size = UDim2.new(1, 0, 1, 0)
+    Frame.BackgroundColor3 = Color3.new(1, 0, 0) -- Red color
+    Frame.BackgroundTransparency = 0.5 -- Set transparency here (0.0 = fully opaque, 1.0 = fully transparent)
+    Frame.BorderSizePixel = 0
+    
+    Frame.Parent = ScreenGui
+    ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
+end
+
+for _, v in pairs(game:GetDescendants()) do
+    if (string.find(v.Name, "ADONIS")) or (v:IsA("ImageButton") and v.Image.Name == "rbxassetid://357249130") then
+        print("ADONIS")
+        tintScreenRedWithTransparency()
+    end
+end
+
+for x, d in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
+    if d:IsA("RemoteEvent") and d:FindFirstChild("__FUNCTION") then
+        print("ADONIS")
+        tintScreenRedWithTransparency()
+    end
+end
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Fling",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "fling players",
+	Callback = function()
+      		loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+  	end    
+})
