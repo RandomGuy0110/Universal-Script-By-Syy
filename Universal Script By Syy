@@ -14,17 +14,10 @@ local Window = OrionLib:MakeWindow({Name = "Universal Scripts | By Syy", HidePre
 })
 
     OrionLib:MakeNotification({
-    Name = "Syy Saving Scripts",
-    Content = "Welcome To My Saving Scripts!",
+    Name = "Universal Scrips",
+    Content = "Welcome",
     Image = "rbxassetid://4483345998",
     Time = 0
-})
-
-Tab:AddButton({
-	Name = "Player Hub",
-	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/JustAP1ayer/PlayerHubOther/main/PlayerHubIngameUgcLimiteds.lua"))()
-  	end    
 })
 
 Tab:AddButton({
@@ -117,6 +110,28 @@ for x, d in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
         tintScreenRedWithTransparency()
     end
 end
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Player Hub",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "PlayerHub V1",
+	Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/JustAP1ayer/PlayerHubOther/main/PlayerHubIngameUgcLimiteds.lua"))()
+      print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "PlayerHub V2",
+	Callback = function()
+      	loadstring(game:HttpGet(('https://raw.githubusercontent.com/JustAP1ayer/PlayerHubOther/main/PlayerHubIngameUgcLimitedsV2.lua')))()
+      print("button pressed")
   	end    
 })
 
